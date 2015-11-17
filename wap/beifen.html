@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+	<meta content="掌上,大学,高校,微信,公众,服务,平台,微信联盟,大学联盟,接口,app,手机版,手机掌上大学,掌上大学官网,掌上大学安卓版,掌上大学 iPhone版,掌上大学最新版,掌上大学下载," name="keywords">
+	<meta name="description" content="Hi同学(掌上大学)是一款有趣的大学生社交软件，各种萌妹，帅哥，被网友戏称“初恋集中营”，参加内置各种社交活动，还可以得话费和各种给力奖品。 赶快下载，让爱情从青涩校园开始。">
+	<meta name="author" content="qiubl">
+	<meta name="robots" content="all">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-touch-fullscreen" content="no"/>
+	<title>真云科技</title>
+	<link rel="stylesheet" href="css/index.css">
+
+</head>
+<body>
+	<div id="mask-load">
+		<img src="images/loading.gif" height="64" width="64" alt="">
+	</div>
+	<div id="content" class="content clearfix">
+		<div id="first-page" class="first-page">
+			<div class="pull-content">
+				<i class="move-img-left" id="hi-icon"></i>
+				<h1 class="title move-img-right-d" id="fir-h1-title">最火热的</h1>
+				<h3 class="title move-img-right-d" id="fir-h3-title">校园移动应用</h3>
+			</div>
+			<!-- <h1 class="title clearfix">
+				<i></i>
+				<strong>最火热的<br/>校园移动应用</strong>
+			</h1> -->
+			<p  class="btn-p fir-p move-img-right-d" id="fir-download">
+				<button id="down">立即下载</button>
+			</p>
+			<div id="fir-img" class="fir-img move-img-left-u"></div>
+		</div>
+		<div class="scend-page" id="scend-page">
+			<div class="pull-content">
+				<h1 class="h1-title move-img-right-d" id="sen-h1-title">Hi同学</h1>
+				<h3 class="h3-title move-img-right-d" id="sen-h3-title">让你校园生活从此与众不同</h3>
+			</div>
+			<a href="javascript:;;" class="btn btn-up" id="btn-up">
+				<span class="up" id="pre-page"></span>
+			</a>
+			<a href="javascript:;;" class="btn btn-next" id="btn-next">
+				<span class="next" id="nxt-page"></span>
+			</a>
+			<div class="pull-page" id="pull-paging">
+				<ul class="clearfix" id="pull-paging-ul">
+					<li><img src="images/7-28-6.png" alt=""></li>
+					<li><img src="images/7-28-7.png" alt=""></li>
+					<li><img src="images/7-28-8.png" alt=""></li>
+					<li><img src="images/7-28-9.png" alt=""></li>
+				</ul>
+			</div>
+		</div>
+		<div class="tr-page" id="tr-page">
+			<div class="tr-content">
+				<h2 class="h1-title  move-img-right-d" id="tr-h2-title">世界这么大<br>遇到你真好</h2>
+				<h4 class="h3-title  move-img-right-d" id="tr-h4-title">Hi，你好，很高兴见到你！</h4>
+			</div>
+			<div class="end-img">
+				<ul id="end-img-ul">
+					<li class="end-img-1" id="end-img-1"><img src="images/4.jpg" alt=""></li>
+					<li class="end-img-2" id="end-img-2"><img src="images/9.jpg" alt=""></li>
+					<li class="end-img-3" id="end-img-3"><img src="images/9.jpg" alt=""></li>
+					<li class="end-img-4" id="end-img-4"><img src="images/4.jpg" alt=""></li>
+				</ul>
+			</div>
+			<p class="btn-p end-p" id="end-download">
+				<button>立即下载</button>
+			</p>
+		</div>
+	</div>
+</body>
+<script src="js/jquery-1.11.1.js"></script>
+<script>
+	$(function(){
+
+
+
+		window.onresize = function () {
+			init();
+		}
+
+		window.onload = function(){
+			$(window).scroll(function(event) {
+				$(this).scrollTop(0);
+			});
+
+			init();
+			navigator.userAgent.match(/Android/i) ? hideAddressBar_android() : hideAddressBar_ios();
+			function hideAddressBar_ios() {
+				if (document.documentElement.scrollHeight <= document.documentElement.clientHeight) {
+					bodyTag = document.getElementsByTagName('body')[0];
+					bodyTag.style.height = document.documentElement.clientWidth / screen.width * screen.height + 'px';
+				}
+				setTimeout(function() {
+					window.scrollTo(0, 1);
+				}, 100);
+			};
+
+			function hideAddressBar_android() {
+				var n = navigator.userAgent;
+				if (n.match(/UCBrowser/i)) {
+					//uc浏览器
+					hideAddressBar_ios();
+					return false;
+				}
+
+				var self = document.getElementsByTagName('body')[0];
+				if (self.requestFullscreen) {
+					self.requestFullscreen();
+				} else if (self.mozRequestFullScreen) {
+					self.mozRequestFullScreen();
+				} else if (self.webkitRequestFullScreen) {
+					self.webkitRequestFullScreen();
+				}
+			};
+
+			$("#mask-load").fadeOut(500);
+			var content = $("#content");
+			var startX, startY, endX, endY, X, Y;
+			var iCurIndex = 0,
+				total = content.children().length,
+				page_H = content.children().height();
+
+			var paging_index = 0,
+				paging_UL = $("#pull-paging-ul"),
+				paging_count = paging_UL.find('li').length,
+				paging_w = paging_UL.find('li').eq(0).width();
+
+			var full_touchStart = function (e) {
+				e.preventDefault();
+				e.stopPropagation();
+				startX = e.originalEvent.changedTouches[0].pageX,
+				startY = e.originalEvent.changedTouches[0].pageY;
+			}
+			var full_touchMove = function (e) {
+				e.preventDefault();
+				e.stopPropagation();
+				endX = e.originalEvent.changedTouches[0].pageX,
+				endY = e.originalEvent.changedTouches[0].pageY;
+			}
+			var full_touchEnd = function(e) {
+				e.preventDefault();
+				e.stopPropagation();
+				X = endX - startX,
+				Y = endY - startY;
+
+				var ev = e || window.e;
+				var target = ev.target || ev.srcElement;
+				var labels = target.nodeName.toLowerCase();
+				if (labels == 'a' || labels == 'span') {
+					var direction = $(target).attr('class');
+					if (direction == "up" || direction == "btn btn-up") {
+						--paging_index;
+						var _W = paging_W(paging_index);
+						paging_UL.delay(100).animate({
+							left: -_W + "px"
+						}, 500);
+					} else {
+						++paging_index;
+						var _W = paging_W(paging_index);
+						paging_UL.delay(100).animate({
+							left: -_W + "px"
+						}, 500);
+					}
+				} else if (labels == 'p' || labels == 'button') {
+					if (navigator.userAgent.match(/Android/i)) {
+						window.location.href = "http://loocha.cn/acc";
+					} else {
+						window.location.href = "https://itunes.apple.com/cn/app/loocha-ban-ji-yun/id582509921";
+					}
+				} else if (Math.abs(Y) > Math.abs(X) && Y > 30) { //从上往下划动
+					content.children().eq(iCurIndex).removeClass('nxt-page nxt-page-out').addClass('nxt-page-out');
+					--iCurIndex;
+					clearOpacity(iCurIndex);
+					var top = _getDivHeight(iCurIndex);
+					content.css({
+						top: -top + "px"
+					}).children().eq(iCurIndex).removeClass('nxt-page').addClass('nxt-page');
+
+				} else if (Math.abs(Y) > Math.abs(X) && Y < -30) { //从下往上划动
+					content.children().eq(iCurIndex).removeClass('pre-page pre-page-out').addClass('pre-page-out');
+					++iCurIndex;
+					clearOpacity(iCurIndex);
+					var top = _getDivHeight(iCurIndex);
+					content.css({
+						top: -top + "px"
+					}).children().eq(iCurIndex).removeClass('pre-page').addClass('pre-page');
+				}
+				setTimeout(function() {
+					animation_page(iCurIndex);
+				}, 400)
+			}
+			content.bind('touchstart',full_touchStart);
+			content.bind('touchmove',full_touchMove);
+			content.bind('touchend',full_touchEnd);
+			
+			function _getDivHeight (num) {
+				if (num < 0 ) {
+					iCurIndex = 0;
+					return;
+				}else if( num >= total){
+					iCurIndex = total-1;
+					return;
+				}
+				return  num * page_H;
+			}
+			function paging_W (num) {
+				if (num < 0) {
+					paging_index = 0;
+					return;
+				}else if (num >= paging_count){
+					paging_index=paging_count-1;
+					return;
+				}
+				return num*paging_w;
+			}
+
+			function clearOpacity (num) {
+				if (iCurIndex == 0) {
+					$("#hi-icon").removeClass('move-img-left').css("opacity","0");
+					$("#fir-h1-title,#fir-h3-title,#fir-download").removeClass('move-img-right-d').css("opacity","0");
+					$("#fir-img").removeClass('move-img-left-u').css("opacity","0");
+				}else if(iCurIndex == 1){
+					$("#sen-h1-title,#sen-h3-title").removeClass('move-img-right-d').css("opacity","0");
+				}else {
+					$("#tr-h2-title,#tr-h4-title").removeClass('move-img-right-d').css("opacity","0");
+					$("#end-img-1").removeClass('move-img-left').css("opacity","0");
+					$("#end-img-2").removeClass('move-img-right-d').css("opacity","0");
+					$("#end-img-3,#end-download").removeClass('move-img-left-u').css("opacity","0");
+					$("#end-img-4").removeClass('move-img-right').css("opacity","0");
+				}
+			}
+			function animation_page (num) {
+				if (num == 0) {
+					$("#hi-icon").addClass('move-img-left');
+					$("#fir-h1-title,#fir-h3-title,#fir-download").addClass('move-img-right-d');
+					$("#fir-img").addClass('move-img-left-u');
+				}else if(num == 1){
+					$("#sen-h1-title,#sen-h3-title").addClass('move-img-right-d');
+				}else {
+					$("#tr-h2-title,#tr-h4-title").addClass('move-img-right-d');
+					$("#end-img-1").addClass('move-img-left');
+					$("#end-img-2").addClass('move-img-right-d');
+					$("#end-img-3,#end-download").addClass('move-img-left-u');
+					$("#end-img-4").addClass('move-img-right');
+				}
+			}
+
+		}
+
+		function init(num) {
+			var sum = num == undefined ? 0 : num;
+			var h = window.screen.height,
+				w = window.screen.width;
+			$("#first-page,#scend-page,#tr-page").css({
+				height: h + sum + "px"
+			});
+			var pull = $(".pull-page");
+			var pDiv = pull.width();
+			var li = pull.find('li');
+			li.width(pDiv);
+			var u = pull.find('ul').css({
+				width: li.width() * li.length + 200 + "px"
+			});
+		}
+
+		// setInterval(function(){
+		// 	init();
+		// },100);
+		
+		
+		// var url = "http://180.96.7.203/loocha/home";
+		// $.ajax({
+		//     url: url,
+		//     type: 'GET',
+		//     data:"index=0&limit=10&type=1",
+		//     dataType: 'jsonp',
+		//     jsonp: 'callback',
+		//     success:function(data){
+		//         var list = data.response;
+		//         var html = [];
+		//         $.each(list, function(idx, val) {
+
+		//             var imgUrl = "http://180.96.7.203/upload";
+
+		//             html.push('<li class="end-img-'+(idx+1)+'"><img src="'+imgUrl+val.image_url+'" alt=""></li>');
+		//         });
+		//         $("#end-img-ul").prepend(html.join(''));
+		//     }
+		// });
+		
+	})
+</script>
+
+</html>

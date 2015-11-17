@@ -1,0 +1,25 @@
+.top-header {
+	box-shadow: 0 2px 5px #FCFCFC
+}
+.top-header .bg {
+	background: #fff !important
+}
+.top-header .con li:hover {
+	background: #F1F1F1 !important
+}
+.top-header .con li.active {
+	background: #F1F2F3 !important
+}
+.top-header .con a {
+	color: #484848
+}
+.section-wrap .content .title {
+	color: #484848
+}
+.section-wrap .content .sub-title {
+	color: #484848
+}
+.four-page{
+	background: url(../images/down/bg_4.png) no-repeat 0 420px;
+	background-size: contain;
+}

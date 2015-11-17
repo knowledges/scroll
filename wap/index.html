@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+	<meta content="掌上,大学,高校,微信,公众,服务,平台,微信联盟,大学联盟,接口,app,手机版,手机掌上大学,掌上大学官网,掌上大学安卓版,掌上大学 iPhone版,掌上大学最新版,掌上大学下载," name="keywords">
+	<meta name="description" content="Hi同学(掌上大学)是一款有趣的大学生社交软件，各种萌妹，帅哥，被网友戏称“初恋集中营”，参加内置各种社交活动，还可以得话费和各种给力奖品。 赶快下载，让爱情从青涩校园开始。">
+	<meta name="author" content="qiubl">
+	<meta name="robots" content="all">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-touch-fullscreen" content="no"/>
+	<title>Hi同学</title>
+	<link rel="stylesheet" href="css/index.css">
+	<script>
+
+	</script>
+</head>
+<body>
+	<div id="mask-share" class="mask-share" style="display:none;">
+		<img src="images/shareGuild.png" alt="">
+	</div>
+	<div id="mask-load">
+		<img src="images/load.gif" height="64" width="64" alt="">
+	</div>
+	<div class="pointer"></div>
+	<div class="pointer_up" style="display:none;"></div>
+	<div id="content" class="content clearfix">
+		<div id="first-page" class="first-page">
+			<div class="pull-content">
+				<i class="move-img-left" id="hi-icon"></i>
+				<h1 class="title move-img-right-d" id="fir-h1-title"><em style="font-style: normal;font-weight:300;">Hi</em> 同学</h1>
+			</div>
+			<h3 class="title move-img-right-d" id="fir-h3-title">就是要你好看</h3>
+			<!-- <h1 class="title clearfix">
+				<i></i>
+				<strong>最火热的<br/>校园移动应用</strong>
+			</h1> -->
+			<p  class="btn-p fir-p move-img-right-d" id="fir-download">
+				<button id="down">立即下载</button>
+			</p>
+			<div id="fir-img" class="fir-img  move-img-left-u">
+				<i class="icon-fir"></i>
+				<i class="icon-scend"></i>
+			</div>
+		</div>
+		<div class="scend-page" id="scend-page">
+			<div class="pull-content">
+				<h1 class="h1-title move-img-right-d" id="sen-h1-title">
+					<em style="font-style: normal;font-weight:300;">Hi</em>&nbsp;同学
+					<!-- <img src="images/8-11-1.png" height="42" width="126" alt=""> -->
+				</h1>
+				<!-- <h3 class="h3-title move-img-right-d" id="sen-h3-title">让你校园生活从此与众不同</h3> -->
+			</div>
+			<a href="javascript:;;" class="btn btn-up" id="btn-up">
+				<span class="up" id="pre-page"></span>
+			</a>
+			<a href="javascript:;;" class="btn btn-next" id="btn-next">
+				<span class="next" id="nxt-page"></span>
+			</a>
+			<div class="pull-page" id="pull-paging">
+				<ul class="clearfix" id="pull-paging-ul">
+					<li>
+						<p>每天都有新事件，你那里呢？</p>
+						<img src="images/8-7-1.png" alt="每天都有新事件，你那里呢？">
+					</li>
+					<li>
+						<p>同学们，这里什么都可以说 ! </p>
+						<img src="images/8-7-2.png" alt="同学们，这里什么都可以说 !">
+					</li>
+					<li>
+						<p>快乐不能停，逗趣你我他</p>
+						<img src="images/8-7-3.png" alt="快乐不能停，逗趣你我他">
+					</li>
+					<li>
+						<p>浪漫邂逅逗逗Ta</p>
+						<img src="images/8-7-4.png" alt="浪漫邂逅逗逗Ta">
+					</li>
+				</ul>
+			</div>
+			<!-- <input type="text" id="Number"> -->
+		</div>
+		<div class="tr-page" id="tr-page">
+			<div class="tr-content">
+				<h2 class="h1-title  move-img-right-d" id="tr-h2-title">校园社交的首选</h2>
+				<h4 class="h3-title  move-img-right-d" id="tr-h4-title">立即点击下载，认识更多新同学</h4>
+			</div>
+			<div class="end-img">
+				<ul id="end-img-ul">
+					<!-- <li class="end-img-1" id="end-img-1"><img src="images/4.jpg" alt=""></li>
+					<li class="end-img-2" id="end-img-2"><img src="images/9.jpg" alt=""></li>
+					<li class="end-img-3" id="end-img-3"><img src="images/9.jpg" alt=""></li>
+					<li class="end-img-4" id="end-img-4"><img src="images/4.jpg" alt=""></li> -->
+				</ul>
+			</div>
+			<p class="btn-p end-p" id="end-download">
+				<button>立即下载</button>
+			</p>
+		</div>
+	</div>
+</body>
+<script src="js/jquery-1.11.1.js"></script>
+<script src="http://pre.f-young.cn/js/conf.js"></script>
+<script src="js/move.js"></script>
+<script>
+	$(function(){
+		window.onload = function(){
+		    var ua = window.navigator.userAgent.toLowerCase();
+			if(ua.match(/MicroMessenger/i)=="micromessenger") {  
+	            $("#mask-share").show();
+	        }
+
+			$(window).scroll(function(event) {
+				$(this).scrollTop(0);
+			})
+			navigator.userAgent.match(/Android/i) ? hideAddressBar_android() : hideAddressBar_ios();
+			function hideAddressBar_ios() {
+				if (document.documentElement.scrollHeight <= document.documentElement.clientHeight) {
+					bodyTag = document.getElementsByTagName('body')[0];
+					bodyTag.style.height = document.documentElement.clientWidth / screen.width * screen.height + 'px';
+				}
+				setTimeout(function() {
+					window.scrollTo(0, 1);
+				}, 100);
+			}
+			function hideAddressBar_android() {
+				var n = navigator.userAgent;
+				if (n.match(/UCBrowser/i)) {
+					//uc浏览器
+					hideAddressBar_ios();
+					return false;
+				}
+
+				var self = document.getElementsByTagName('body')[0];
+				if (self.requestFullscreen) {
+					self.requestFullscreen();
+				} else if (self.mozRequestFullScreen) {
+					self.mozRequestFullScreen();
+				} else if (self.webkitRequestFullScreen) {
+					self.webkitRequestFullScreen();
+				}
+			}
+			$("#mask-load").fadeOut(500);
+		}
+		
+		$("#mask-share").unbind('click').click(function(event) {
+			$(this).fadeOut(1000);
+		});
+
+		$.ajax({
+		    url: "/loocha/home",
+		    type: 'GET',
+		    data:"index=0&limit=10&type=1",
+		    success:function(data){
+				if(typeof data === "string"){
+					data = $.parseJSON(data);
+				}
+		        var list = data.response;
+		        var html = [];
+		        $.each(list, function(idx, val) {
+		            html.push('<li class="end-img-'+(idx+1)+'" id="end-img-'+(idx+1)+'"><img src="/upload'+val.image_url+'" alt=""></li>');
+		        });
+		        $("#end-img-ul").prepend(html.join(''));
+		    }
+		});
+		// alert($('#first-page').height()+","+$('#first-page').width());
+	})
+</script>
+
+</html>

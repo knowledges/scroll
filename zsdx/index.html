@@ -1,0 +1,139 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+	<title>Hi同学下载</title>
+	<meta content="掌上,大学,高校,微信,公众,服务,平台,微信联盟,大学联盟,接口,app,手机版,手机掌上大学,掌上大学官网,掌上大学安卓版,掌上大学 iPhone版,掌上大学最新版,掌上大学下载," name="keywords">
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script>
+	function is_weixn(){ 
+		var ua = navigator.userAgent.toLowerCase();
+		 if(ua.match(/MicroMessenger/i) == "micromessenger") { 
+		 	return true; 
+		 } else { 
+		 	return false; 
+		 }
+	}
+	</script>
+</head>
+<style>
+
+	body,div,ul,li { padding: 0; margin: 0; }
+	ul,li { list-style: none; font-family: Arial;}
+	body { }
+	img { width: 100%; border: 0;}
+	a{cursor: pointer;};
+	.wrap {  margin: 0 auto; position: relative;display:none;}
+	.photo { width: 1200px; margin: 0 auto;}
+	.top { width: 1200px; position: relative; height: 720px; margin: 0 auto; }
+	.btn-iphone, .btn-android { width: 265px; height: 68px; display: block; position: absolute; top: 360px; right: 216px;}
+	.btn-android { width: 267px; top: 450px; }
+	.btn-qrcode{width: 135px;  display: block; position: absolute; top: 355px; right: 45px;}
+	.footer { height: 40px; line-height: 40px; color: #666; font-size: 12px; text-align: center; background-color: #e8e8e8; }
+	.go-back { display: block; width: 154px; height: 119px; position: absolute; bottom: 60px; right: 50px;}
+	.anchor	{ position: fixed; top: 250px; right: 0; width: 44px; height: 203px;  background-color: #735741; z-index: 10; }
+	.anchor ul li a { text-align: center; line-height: 40px; color: #dac4b2; border-bottom: 1px solid rgba(255,255,255,0.2); display: block; text-decoration: none; }
+	.anchor ul li a:hover { color: #ffd400; background-color: #5b4633; }
+	.anchor ul li:last-child a { border-bottom: 0; }
+	.anchor ul li.active a { background-color: #ff5700; color: #fff; border-bottom: 1px solid #ff5700; }
+	
+
+	.wrap2 img { width: 100%; }
+	.wrap2 { position: relative;display:none;}
+	.wrap2 .download-wrap { position: absolute; top: 0.5em; left: 0; right: 0; }
+	.wrap2 .title { width: 45%; margin: 1em auto 0.8em auto;	}
+	.wrap2 .btn-download { width: 50%; margin: 0 auto; }
+	.wrap-bg{background: url(img/banner_bg.jpg) center 0 no-repeat; }
+
+</style>
+<body>
+
+
+<script>
+	function downloadIOS(){
+		window.location.href='https://itunes.apple.com/cn/app/loocha-ban-ji-yun/id582509921';
+	}
+	function downloadAndroid(){
+		window.location.href='http://loocha.cn/acc';
+	}
+
+	function is_mobile() {  
+	var regex_match = /(nokia|iphone|android|motorola|^mot-|softbank|foma|docomo|kddi|up.browser|up.link|htc|dopod|blazer|netfront|helio|hosin|huawei|novarra|CoolPad|webos|techfaith|palmsource|blackberry|alcatel|amoi|ktouch|nexian|samsung|^sam-|s[cg]h|^lge|ericsson|philips|sagem|wellcom|bunjalloo|maui|symbian|smartphone|midp|wap|phone|windows ce|iemobile|^spice|^bird|^zte-|longcos|pantech|gionee|^sie-|portalmmm|jigs browser|hiptop|^benq|haier|^lct|operas*mobi|opera*mini|320x320|240x320|176x220)/i;  
+	var u = navigator.userAgent; 
+	if (null == u) {  
+	return true;  
+	}  
+	var result = regex_match.exec(u);  
+	if (null == result) {  
+	return false  
+	} else {  
+	return true  
+	}  
+	}  
+
+
+	
+
+	var isweixin = is_weixn();
+	//电脑
+	if (!is_mobile()) {  
+		$("body").html('<div class="wrap" id="wrap"><div class="anchor"><ul><li class="active"><a onclick="clickFloor(0,1)" >1</a></li><li><a onclick="clickFloor(700,2)">2</a></li><li><a onclick="clickFloor(1437,3)">3</a></li><li><a onclick="clickFloor(2140,4)">4</a></li><li ><a onclick="clickFloor(2910,5)">↑</a></li></ul></div><div class="photo"><img src="img/img_01.jpg" alt=""></div><div class="photo"><img src="img/img_02.jpg" alt=""></div><div class="photo"><img src="img/img_03.jpg" alt=""></div><div class="photo"><img src="img/img_04.jpg" alt=""></div><div class="wrap-bg"><div class="top"><a href="https://itunes.apple.com/cn/app/loocha-ban-ji-yun/id582509921" class="btn-iphone"><img src="img/btn_iphone.png" alt=""></a><a href="http://loocha.cn/acc" class="btn-android"><img src="img/btn_android.png" alt=""></a><a href="javascript:void(0);" class="btn-qrcode"><img src="img/qr_code.jpg" alt=""></a></div></div><div class="footer">技术支持：掌上大学南京产品运营中心</div></div>');
+		$("#wrap").css("display","block");
+	}  
+	//手机
+	else{
+		 if(!isweixin){
+			$("body").html('<div class="wrap2" id="wrap2"><img src="img/background.jpg" alt=""><div class="download-wrap"><div class="title"><img src="img/title.png" alt=""></div><div class="btn-download" onclick="downloadIOS()"><img src="img/btn_download_iphone.png" alt=""></div><a href="http://loocha.cn/acc" ><div class="btn-download" style="margin-top:0.3em" ><img src="img/btn_download_android.png" alt=""></div></a></div></div>');
+		}else{
+			$("body").html('<div class="wrap2" id="wrap2"><img src="img/background.jpg" alt=""><div class="download-wrap"><div class="title"><img src="img/title.png" alt=""></div><div class="btn-download" onclick="downloadIOS()"><img src="img/btn_download_iphone.png" alt=""></div><a href="http://dd.myapp.com/16891/CDF8F71A45F2761AFE57FCDF71751C28.apk?fsname=com%2Erealcloud%2Eloochadroid%2Ecollegeyu%5F1%2E5%2E3%5F54.apk" ><div class="btn-download" style="margin-top:0.3em" ><img src="img/btn_download_android.png" alt=""></div></a></div></div>');
+		}
+		$("#wrap2").css("display","block");
+		
+	}
+
+	var flag = true;
+
+	//缓慢滚动到指定位置
+	function scrollTopTo(topnum){
+		
+		$("html,body").animate({scrollTop:topnum},500);
+		
+		setTimeout(function(){flag = true}, 500);
+	}
+	//点击指定层
+	function clickFloor(num,n){
+		flag = false;
+		$(".anchor li").removeClass("active");
+		$(".anchor li")[n-1].className="active";
+		scrollTopTo(num);
+	}
+
+	window.onscroll = function(){
+		if(flag){
+			var top = document.documentElement.scrollTop || document.body.scrollTop; 
+			if(top >= 720 && top <= 1300){
+				$(".anchor li").removeClass("active");
+				$(".anchor li")[1].className="active";
+			}
+			else if(top >= 1437 && top <= 2000){
+				$(".anchor li").removeClass("active");
+				$(".anchor li")[2].className="active";
+			}
+			else if(top >= 2140 && top <= 2800){
+				$(".anchor li").removeClass("active");
+				$(".anchor li")[3].className="active";
+			}
+			else if(top >= 2867 && top <= 3200){
+				$(".anchor li").removeClass("active");
+				$(".anchor li")[4].className="active";
+			}
+			else if(top >= 0 && top <= 600){
+				$(".anchor li").removeClass("active");
+				$(".anchor li")[0].className="active";
+			}
+		}
+	}
+</script>
+</body>
+</html>

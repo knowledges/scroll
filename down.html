@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="掌上,大学,高校,微信,公众,服务,平台,微信联盟,大学联盟,接口,app,手机版,手机掌上大学,掌上大学官网,掌上大学安卓版,掌上大学 iPhone版,掌上大学最新版,掌上大学下载," name="keywords">
+    <meta name="description" content="Hi同学(掌上大学)是一款有趣的大学生社交软件，各种萌妹，帅哥，被网友戏称“初恋集中营”，参加内置各种社交活动，还可以得话费和各种给力奖品。 赶快下载，让爱情从青涩校园开始。">
+    <meta name="author" content="shifone">
+    <meta name="robots" content="all">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>真云科技</title>
+      <link href="favicon.ico" rel="shortcut icon" />
+    <link rel="stylesheet" href="css/index.css?v=1.0.0">
+    <link rel="stylesheet" href="css/downs.css">
+    <script>
+        var ua = window.navigator.userAgent.toLowerCase(),
+                ua_android = ua.match(/(Android);?[\s\/]+([\d.]+)?/i),
+                ua_ipad = ua.match(/(iPad).*OS\s([\d_]+)/i),
+                ua_iphone = !ua_ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/i),
+                ua_wx = ua.match(/(MicroMessenger)\/(\d+\.\d+\.\d+)/i);
+        if(ua_iphone || ua_android || ua_wx){
+            window.location.href = "wap/index.html";
+        }
+    </script>
+</head>
+<body class="loading-process">
+
+<!--[if lt IE 8]>
+<div class="browser-happy">
+    <div class="content">
+        <p>童鞋，您的浏览器太OUT，为何不是试试更先进的浏览器呢～～</p>
+        <a href="http://browsehappy.com/">立即更新</a>
+    </div>
+</div>
+<![endif]-->
+
+
+<div class="top-header">
+    <div class="bg"></div>
+    <div class="con">
+        <div class="main">
+            <img src="images/logonew.png"  alt="Hi同学logo">
+            
+            <ul>
+                <li>
+                    <a href="index.html">首页</a>
+                </li>
+                <li><a href="product.html">产品与服务</a></li>
+                <li ><a href="news.html">发展动态</a></li>
+                <li  class="active"><a href="down.html">下载</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+            
+        </div>
+    </div>
+</div>
+
+<div id="main-loading" class="loading">
+   <div id="overlay" class="overlay"></div>
+   <!-- <img src="images/loading.svg" alt=""> -->
+   <img src="images/loading1.gif"   alt="">
+   <!-- <img src="images/loading3.gif" height="32" width="32" alt=""> -->
+    <!--
+
+    <div class="loading-circle"></div>
+    <img src="images/logo.jpg"   alt="">
+    -->
+</div>
+
+<div class="section-wrap four-page">
+    <!-- <img class="down-bg" src="images/down/bg_4.jpg"> -->
+    <div class="content">
+        <div class="title down-title">校园社交的首选</div>
+        <div class="sub-title down-sub">立即点击下载，认识更多新同学</div>
+
+        <div class="pic-con" id="second-pic-list">
+            <img id="down-ios" src="images/down/ios.png" height="220" width="220"alt="ios" >
+            <img id="down-android" src="images/down/android.png" height="220" width="220"alt="android" >
+            <img id="down-erweima" src="images/down/erweima.png" height="220" width="220"alt="二维码" >
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="js/jquery-1.11.1.js?v=1.0.0"></script>
+<script src="js/shifone-index.js?v=1.0.0"></script>
+<script src="http://pre.f-young.cn/js/conf.js"></script>
+<script type="text/javascript">
+	$(function(){
+		window.onload = function(){
+			$("#down-ios").animate({top:0,opacity:1},1000,function(){
+				$("#down-android").animate({top:0,opacity:1},800,function(){
+					$("#down-erweima").animate({top:0,opacity:1},700,function(){
+						
+					});
+				});
+			});
+
+			$("#down-ios").unbind('click').click(function(event) {
+			 window.location.href="http://android.myapp.com/myapp/detail.htm?apkName=com.realcloud.loochadroid.campuscloud";
+			});
+			
+			$("#down-android").unbind('click').click(function(event) {
+            // window.location.href="http://android.myapp.com/myapp/detail.htm?apkName=com.realcloud.loochadroid.campuscloud";
+				window.location.href="http://loocha.cn/acc";
+			});
+		}
+	})
+</script>
+</html>
